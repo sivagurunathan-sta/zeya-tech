@@ -1,0 +1,85 @@
+{
+  "name": "linkedin-company-website",
+  "version": "1.0.0",
+  "description": "A modern, professional company website built with MERN stack featuring LinkedIn-inspired design",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node backend/server.js",
+    "server": "cd backend && npm start",
+    "server:dev": "cd backend && npm run dev",
+    "client": "cd frontend && PORT=5001 npm start",
+    "build": "cd frontend && npm run build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "install-server": "cd backend && npm install",
+    "install-client": "cd frontend && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "setup": "npm run install-all && cd backend && npm run full-setup",
+    "seed-content": "cd backend && npm run seed-content",
+    "create-admin": "cd backend && npm run create-admin",
+    "full-setup": "cd backend && npm run full-setup",
+    "postinstall": "npm run install-all",
+    "heroku-postbuild": "npm run install-all && npm run build"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "mern-stack",
+    "company-website",
+    "linkedin-style",
+    "cms",
+    "admin-panel",
+    "professional-website",
+    "responsive-design",
+    "tailwindcss",
+    "authentication",
+    "file-upload",
+    "contact-form",
+    "team-management",
+    "project-portfolio",
+    "achievement-showcase"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://yourwebsite.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/linkedin-company-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/linkedin-company-website/issues"
+  },
+  "homepage": "https://github.com/yourusername/linkedin-company-website#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "express-mongo-sanitize": "^2.2.0",
+    "hpp": "^0.2.3",
+    "nodemailer": "^7.0.5",
+    "xss-clean": "^0.1.4"
+  }
+}

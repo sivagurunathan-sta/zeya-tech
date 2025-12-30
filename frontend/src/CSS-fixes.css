@@ -1,0 +1,340 @@
+/* Add to your existing CSS file or create a new one */
+
+/* Fix for progress bar overflow issue */
+.progress-container {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 0.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1.5s ease-out;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Metrics card improvements */
+.metrics-card {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.metrics-card .progress-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.metrics-card:hover .progress-wrapper {
+  opacity: 1;
+}
+
+/* Fix for any colored line extending outside boxes */
+.contained-element {
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.contained-element::before,
+.contained-element::after {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure all containers have proper box-sizing */
+.card-container,
+.content-wrapper,
+.section-container {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Fix for Nature image circles */
+.nature-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nature-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Enhanced rating stars */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star-half {
+  position: relative;
+  display: inline-block;
+}
+
+.star-half .star-empty {
+  color: #d1d5db;
+}
+
+.star-half .star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #fbbf24;
+}
+
+/* Animation improvements */
+@keyframes slideInProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+
+.animated-progress {
+  animation: slideInProgress 2s ease-out forwards;
+}
+
+/* ZEYA-TECH Logo specific styles */
+.zeya-logo {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.zeya-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.25);
+}
+
+.zeya-logo-inner {
+  background: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .progress-container {
+    height: 0.25rem;
+  }
+  
+  .metrics-card {
+    padding: 1.5rem;
+  }
+  
+  .nature-circle {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+/* Contact info specific styles */
+.contact-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f3f4f6;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Company image container */
+.company-image-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.company-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.company-image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Statistics badge */
+.stats-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Form enhancements */
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.form-input:hover {
+  background-color: white;
+  border-color: #9ca3af;
+}
+
+.form-input:focus {
+  outline: none;
+  background-color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.form-group:focus-within .form-icon {
+  color: #3b82f6;
+}
+
+/* Button gradient effects */
+.btn-gradient {
+  background: linear-gradient(135deg, #3b82f6, #7c3aed);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #2563eb, #6d28d9);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+/* Loading states */
+.loading-spinner {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced shadows and glows */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Smooth animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar,
+  .animated-progress,
+  .form-input,
+  .contact-card,
+  .company-image-container img {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Print optimization */
+@media print {
+  .btn-gradient,
+  .contact-card,
+  .progress-container {
+    box-shadow: none;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .form-input {
+    border-width: 2px;
+  }
+  
+  .contact-card {
+    border-width: 2px;
+  }
+}
